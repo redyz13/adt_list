@@ -31,7 +31,7 @@ static Node newNode(item value) {
     Node new; 
 
     new = malloc(sizeof(struct Node));
-    if(node == NULL) return NULL;
+    if(new == NULL) return NULL;
 
     new->next = NULL;
     new->value = value;
@@ -62,4 +62,34 @@ List insertHead(List list, item val) {
     (list->size)++;
 
     return list;
-} 
+}
+
+static void print(Node head) { 
+    int i = 0;
+
+    while(head != NULL) {
+        printf("Elemento %d = ", i);
+        printItem(head->value);
+        putchar('\n');
+        head = head->next;
+        i++;
+    }
+}
+
+void printList(List list) {
+    print(list->head);
+}
+
+void freeList(List list) {
+    Node head, tmp;
+
+    head = list->head;
+    
+    while(head != NULL) {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+    }
+
+    free(list);
+}
