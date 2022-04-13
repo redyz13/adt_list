@@ -1,6 +1,6 @@
 CC=gcc 
 CFLAGS=-Wall -g
-FILES=main.o list.o item.o 
+FILES=main.o list.o item.o node.o
 
 all: main.out 
 
@@ -13,7 +13,10 @@ main.out: $(FILES)
 main.o: main.c 
 	$(CC) $(CFLAGS) -c $<
 
-list.o: list.c list.h item.h 
+node.o: node.c node.h item.h 
+	$(CC) $(CFLAGS) -c $<
+
+list.o: list.c list.h node.h item.h  
 	$(CC) $(CFLAGS) -c $<
 
 # < : prende solo la prim occorrenza dopo i due punti 

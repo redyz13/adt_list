@@ -2,18 +2,12 @@
 #include <stdlib.h>
 #include "item.h" 
 #include "list.h"
+#include "node.h"
 
 struct List {
     struct Node *head;
     int size;
 };
-
-struct Node {
-     item value;
-     struct Node *next;
-};
-
-typedef struct Node *Node; 
 
 List newList(void) {
     List l; 
@@ -27,69 +21,15 @@ List newList(void) {
     return l;
 }
 
-static Node newNode(item value) {
-    Node new; 
-
-    new = malloc(sizeof(struct Node));
-    if(new == NULL) return NULL;
-
-    new->next = NULL;
-    new->value = value;
-    
-    return new;
-}
-
-static Node nextNode(Node node) {
-    node = node->next;
-    return node; 
-}
-
-static Node *getHead(List list) {
-    return &list->head;
-}
-
-static Node addHead(Node head, item val) {
-    Node new; 
-
-    new = newNode(val);
-    if(new == NULL) return NULL;
-
-    //assegno new ad head se head è nulla
-    if(head == NULL) {
-        head = new; 
-        return head;
-    }
-
-    new->next = head; 
-    head = new; 
-
-    return head;
-}
-
 List insertHead(List list, item val) {
-    Node *head;
-
-    head = getHead(list);
-
-    *head = addHead(*head, val); 
+    list->head = addHead(list->head, val); 
     (list->size)++;
 
     return list;
 }
 
-static void print(Node head) { 
-    int i = 0;
-
-    while(head != NULL) {
-        printf("Elemento %d = ", i);
-        printItem(head->value);
-        putchar('\n');
-        head = nextNode(head);
-        i++;
-    }
-}
-
 void printList(List list) {
+//    list = reverseList(list);
     print(list->head);
 }
 
@@ -100,9 +40,28 @@ void freeList(List list) {
 
     while(head != NULL) {
         tmp = head;
-        head = head->next;
+        head = nextNode(head);
         free(tmp);
     }
 
     free(list);
 }
+
+/*List reverseList(List list) {
+    List reverse;
+    Node tmp;
+    item val;
+
+    reverse = newList();
+
+    while(list->head != NULL){
+        tmp = list->head;
+        val = getItem(list->head);
+        reverse = insertHead(reverse, val);
+        list->head = nextNode(list->head);
+        free(tmp);
+    }
+
+    return reverse;
+}
+*/
