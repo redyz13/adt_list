@@ -44,8 +44,8 @@ static Node nextNode(Node node) {
     return node; 
 }
 
-static Node getHead(List list) {
-    return list->head;
+static Node *getHead(List list) {
+    return &list->head;
 }
 
 static Node addHead(Node head, item val) {
@@ -67,8 +67,11 @@ static Node addHead(Node head, item val) {
 }
 
 List insertHead(List list, item val) {
+    Node *head;
 
-    list->head = addHead(list->head, val); 
+    head = getHead(list);
+
+    *head = addHead(*head, val); 
     (list->size)++;
 
     return list;
@@ -103,5 +106,3 @@ void freeList(List list) {
 
     free(list);
 }
-
-
