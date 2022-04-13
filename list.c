@@ -39,12 +39,21 @@ static Node newNode(item value) {
     return new;
 }
 
+static Node nextNode(Node node) {
+    node = node->next;
+    return node; 
+}
+
+static Node getHead(List list) {
+    return list->head;
+}
+
 static Node addHead(Node head, item val) {
     Node new; 
 
     new = newNode(val);
     if(new == NULL) return NULL;
-    
+
     //assegno new ad head se head è nulla
     if(head == NULL) {
         head = new; 
@@ -58,6 +67,7 @@ static Node addHead(Node head, item val) {
 }
 
 List insertHead(List list, item val) {
+
     list->head = addHead(list->head, val); 
     (list->size)++;
 
@@ -71,7 +81,7 @@ static void print(Node head) {
         printf("Elemento %d = ", i);
         printItem(head->value);
         putchar('\n');
-        head = head->next;
+        head = nextNode(head);
         i++;
     }
 }
@@ -84,7 +94,7 @@ void freeList(List list) {
     Node head, tmp;
 
     head = list->head;
-    
+
     while(head != NULL) {
         tmp = head;
         head = head->next;
@@ -93,3 +103,5 @@ void freeList(List list) {
 
     free(list);
 }
+
+
