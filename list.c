@@ -21,8 +21,20 @@ List newList(void) {
     return l;
 }
 
-List insertHead(List list, Item it) {
+int isEmpty(List list) {
+    return (list->size) == 0;
+}
+
+List addFirst(List list, Item it) {
     list->head = addHead(list->head, it); 
+    (list->size)++;
+
+    return list;
+}
+
+// FIXME
+List addLast(List list, Item it) {
+    list->head = addTail(list->head, it); 
     (list->size)++;
 
     return list;
@@ -33,7 +45,7 @@ void printList(List list) {
     int i = 0;
 
     // Traverse through nodes of the list and print data of each node
-    while(head != NULL) {
+    while(!isNull(head)) {
         printf("Elemento %d = ", i);
         printItem(getItem(head));
         putchar('\n');
@@ -42,37 +54,37 @@ void printList(List list) {
     }
 }
 
+List reverseList(List list) {
+    List reverse;
+    Node head;
+    Item val;
+
+    head = list->head;
+
+    reverse = newList();
+
+    while(!isNull(head)){
+        val = getItem(head);
+        reverse = addFirst(reverse, val);
+        head = nextNode(head);
+    }
+    
+    freeList(list);
+
+    return reverse;
+}
+
 void freeList(List list) {
     Node head, tmp;
 
     head = list->head;
 
-    // Travers through nodes and free each node
-    while(head != NULL) {
+    // Travers through nodes of the list and free each node
+    while(!isNull(head)) {
         tmp = head;
         head = nextNode(head);
         free(tmp);
     }
 
     free(list);
-}
-
-List reverseList(List list) {
-    List reverse;
-    Node tmp;
-    Item val;
-
-    reverse = newList();
-
-    while(list->head != NULL){
-        tmp = list->head;
-        val = getItem(list->head);
-        reverse = insertHead(reverse, val);
-        list->head = nextNode(list->head);
-        free(tmp);
-    }
-    
-    free(list);
-
-    return reverse;
 }

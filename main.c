@@ -8,13 +8,18 @@ int main(void) {
     list = newList();
 
     for(int i = 0; i < 5; i++) {
-        list = insertHead(list, i);
+        list = addFirst(list, i);
     }
 
     printList(list);
     
     list = reverseList(list);
+
+    putchar('\n');
     
+    // list = addLast(list, 25);
+    // list = addLast(list, 55);
+
     printList(list);
 
     freeList(list);

@@ -20,6 +20,10 @@ Node newNode(Item it) {
     return new;
 }
 
+int isNull(Node node) {
+    return node == NULL;
+}
+
 Node nextNode(Node node) {
     node = node->next;
 
@@ -46,10 +50,40 @@ Node addHead(Node head, Item it) {
     return head;
 }
 
+// FIXME
+Node addTail(Node head, Item it) {
+    Node new;
+
+    new = newNode(it);
+    if(new == NULL) return NULL;
+
+    Node last = head;
+
+    // If there are no nodes, set the created one as head 
+    if(head == NULL) {
+        head = new;
+        return head;
+    }
+
+    // Traverse until the end 
+    while(!isNull(last)) {
+        last = nextNode(last);
+    }
+
+    // Set the new node as the last
+    last = new;
+
+    return last;
+
+    /* The new node node will already point to NULL
+    *  to the newNode function
+    */
+}
+
 Item getItem(Node node) {
     if(node != NULL) {
         return node->data;
     }
-    
+
     return NULLITEM; 
 }

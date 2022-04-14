@@ -5,10 +5,14 @@ typedef struct List *List;
 // Create a new list
 List newList(void);
 
-/* Insert a value into the list, if there are
-*  no values, set the given one as the first value 
-*/
-List insertHead(List list, Item it);
+// Check if the list is empty
+int isEmpty(List list);
+
+// Add a value into the first position of the list
+List addFirst(List list, Item it);
+
+// Add a value into the last position of the list
+List addLast(List list, Item it);
 
 // Print the entire list to stdout
 void printList(List list);
@@ -16,5 +20,7 @@ void printList(List list);
 // Free the entire list
 void freeList(List list);
 
-// Reverse the entire list
+/* Return a reversed list of the given list
+*  and free the old list
+*/
 List reverseList(List list);
