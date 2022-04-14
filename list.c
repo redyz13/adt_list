@@ -32,7 +32,6 @@ List addFirst(List list, Item it) {
     return list;
 }
 
-// FIXME
 List addLast(List list, Item it) {
     list->head = addTail(list->head, it); 
     (list->size)++;

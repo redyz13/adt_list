@@ -50,14 +50,11 @@ Node addHead(Node head, Item it) {
     return head;
 }
 
-// FIXME
 Node addTail(Node head, Item it) {
     Node new;
 
     new = newNode(it);
     if(new == NULL) return NULL;
-
-    Node last = head;
 
     // If there are no nodes, set the created one as head 
     if(head == NULL) {
@@ -65,18 +62,21 @@ Node addTail(Node head, Item it) {
         return head;
     }
 
-    // Traverse until the end 
-    while(!isNull(last)) {
+    Node last = head;
+    Node new_head = head;
+
+    // Traverse until the last node 
+    while(last->next != NULL) {
         last = nextNode(last);
     }
 
-    // Set the new node as the last
-    last = new;
+    // Change the next of last node
+    last->next = new;
 
-    return last;
+    return new_head;
 
     /* The new node node will already point to NULL
-    *  to the newNode function
+    *  thanks to the newNode function
     */
 }
 

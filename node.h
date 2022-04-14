@@ -16,10 +16,12 @@ Node nextNode(Node node);
 
 /* Add a node to the front, if there are
 *  no nodes, set the created one as head 
+*  return the new head
 */
 Node addHead(Node head, Item it);
 
 /* Add a node to the front, if there are
 *  no nodes, set the created one as head 
+*  return the new head
 */
 Node addTail(Node head, Item it);
