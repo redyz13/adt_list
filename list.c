@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "item.h" 
 #include "list.h"
 #include "node.h"
 
@@ -29,7 +28,6 @@ List insertHead(List list, item val) {
 }
 
 void printList(List list) {
-//    list = reverseList(list);
     print(list->head);
 }
 
@@ -47,7 +45,7 @@ void freeList(List list) {
     free(list);
 }
 
-/*List reverseList(List list) {
+List reverseList(List list) {
     List reverse;
     Node tmp;
     item val;
@@ -61,7 +59,9 @@ void freeList(List list) {
         list->head = nextNode(list->head);
         free(tmp);
     }
+    
+    free(list);
 
     return reverse;
 }
-*/
+

@@ -13,6 +13,10 @@ int main(void) {
 
     printList(list);
     
+    list = reverseList(list);
+    
+    printList(list);
+
     freeList(list);
 
     return 0;

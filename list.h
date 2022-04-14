@@ -1,5 +1,4 @@
 #include "item.h"
-#include "node.h"
 
 typedef struct List *List;
 

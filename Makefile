@@ -16,7 +16,7 @@ main.o: main.c
 node.o: node.c node.h item.h 
 	$(CC) $(CFLAGS) -c $<
 
-list.o: list.c list.h node.h item.h  
+list.o: list.c list.h node.h   
 	$(CC) $(CFLAGS) -c $<
 
 # < : prende solo la prim occorrenza dopo i due punti 
