@@ -10,13 +10,13 @@ main.out: $(FILES)
 # @ : nome della regola 
 # ^ : prende tutto ciò che è alla prima riga dopo la regola
 
-main.o: main.c 
+main.o: main.c list.h
 	$(CC) $(CFLAGS) -c $<
 
-node.o: node.c node.h item.h 
+node.o: node.c node.h
 	$(CC) $(CFLAGS) -c $<
 
-list.o: list.c list.h node.h   
+list.o: list.c list.h node.h
 	$(CC) $(CFLAGS) -c $<
 
 # < : prende solo la prim occorrenza dopo i due punti 
