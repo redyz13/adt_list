@@ -26,14 +26,39 @@ int isEmpty(List list) {
 }
 
 List addFirst(List list, Item it) {
-    list->head = addHead(list->head, it); 
+    Node head = list->head;
+
+    head = addHead(list->head, it);
+    
+    if(head == NULL) return list;
+
+    list->head = head;
     (list->size)++;
 
     return list;
 }
 
 List addLast(List list, Item it) {
-    list->head = addTail(list->head, it); 
+    Node head = list->head;
+
+    head = addTail(list->head, it);
+    
+    if(head == NULL) return list;
+
+    list->head = head;
+    (list->size)++;
+
+    return list;
+}
+
+List add(List list, Item it, int pos) {
+    Node head = list->head;
+
+    head = addPos(list->head, it, pos);
+    
+    if(head == NULL) return list;
+
+    list->head = head;
     (list->size)++;
 
     return list;

@@ -20,7 +20,10 @@ int main(void) {
     putchar('\n');
     
     list = addLast(list, 25);
-    list = addLast(list, 55);
+    list = add(list, 33, 2);
+    list = add(list, 533, 22);
+    list = add(list, 533, 8);
+    list = add(list, 11, 9);
 
     printList(list);
 

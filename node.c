@@ -80,6 +80,53 @@ Node addTail(Node head, Item it) {
     */
 }
 
+Node addPos(Node head, Item it, int pos) {
+    Node new;
+    int i = 0;
+
+    new = newNode(it);
+    if(new == NULL) return NULL;
+
+    // If there are no nodes, set the created one as head 
+    if(head == NULL) {
+        head = new;
+        return head;
+    }
+
+    // If the position is 0, add the node to the head
+    if(pos == 0) {
+        new->next = head;
+        head = new;
+        return head;
+    }
+
+    Node previous, new_head;
+
+    previous = head;
+    new_head = head;
+
+    // Traverse until the given pos - 1 is found or you reach the end of the list 
+    while(i < pos - 1 && !isNull(previous)) {
+        previous = nextNode(previous);
+        i++;
+    }
+
+    // If the position doesn't exist return null
+    if(previous == NULL) {
+        free(new);
+        return NULL;
+    }
+
+    /* If the position is found, set the new node to the given
+    *  position and its next node to the current one that was in
+    *  that position
+    */
+    new->next = previous->next;
+    previous->next = new;
+
+    return new_head;
+}
+
 Item getItem(Node node) {
     if(node != NULL) {
         return node->data;

@@ -25,3 +25,10 @@ Node addHead(Node head, Item it);
 *  return the new head
 */
 Node addTail(Node head, Item it);
+
+/* Add a node to the given position, if the position
+*  doesn't exist return null, if the position is the last,
+*  add the node to the end, if the position is 0, set the
+*  created one as head
+*/
+Node addPos(Node head, Item it, int pos);
