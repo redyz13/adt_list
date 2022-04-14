@@ -20,15 +20,24 @@ List newList(void) {
     return l;
 }
 
-List insertHead(List list, item val) {
-    list->head = addHead(list->head, val); 
+List insertHead(List list, Item it) {
+    list->head = addHead(list->head, it); 
     (list->size)++;
 
     return list;
 }
 
 void printList(List list) {
-    print(list->head);
+    Node head = list->head;
+    int i = 0;
+
+    while(head != NULL) {
+        printf("Elemento %d = ", i);
+        printItem(getItem(head));
+        putchar('\n');
+        head = nextNode(head);
+        i++;
+    }
 }
 
 void freeList(List list) {
@@ -48,7 +57,7 @@ void freeList(List list) {
 List reverseList(List list) {
     List reverse;
     Node tmp;
-    item val;
+    Item val;
 
     reverse = newList();
 
@@ -64,4 +73,3 @@ List reverseList(List list) {
 
     return reverse;
 }
-

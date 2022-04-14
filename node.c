@@ -3,18 +3,18 @@
 #include "node.h"
 
 struct Node {
-     item value;
+     Item data;
      struct Node *next;
 };
 
-Node newNode(item value) {
+Node newNode(Item it) {
     Node new; 
 
     new = malloc(sizeof(struct Node));
     if(new == NULL) return NULL;
 
     new->next = NULL;
-    new->value = value;
+    new->data = it;
     
     return new;
 }
@@ -25,13 +25,12 @@ Node nextNode(Node node) {
     return node;
 }
 
-Node addHead(Node head, item val) {
+Node addHead(Node head, Item it) {
     Node new; 
 
-    new = newNode(val);
+    new = newNode(it);
     if(new == NULL) return NULL;
 
-    //assegno new ad head se head è nulla
     if(head == NULL) {
         head = new; 
         return head;
@@ -43,23 +42,10 @@ Node addHead(Node head, item val) {
     return head;
 }
 
-void print(Node head) { 
-    int i = 0;
-
-    while(head != NULL) {
-        printf("Elemento %d = ", i);
-        printItem(head->value);
-        putchar('\n');
-        head = nextNode(head);
-        i++;
-    }
-}
-
-item getItem(Node node) {
+Item getItem(Node node) {
     if(node != NULL) {
-        return node->value;
+        return node->data;
     }
     
     return NULLITEM; 
 }
-

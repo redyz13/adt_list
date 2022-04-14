@@ -2,12 +2,16 @@
 
 typedef struct Node *Node;
 
-Node newNode(item value);
+// Create a new node
+Node newNode(Item it);
 
+// Return data of a node
+Item getItem(Node node);
+
+// Given a node return the next node
 Node nextNode(Node node);
 
-Node addHead(Node head, item val);
-
-void print(Node head);
-
-item getItem(Node node);
+/* Add a node to the front, if there are
+*  no nodes, set the created one as head 
+*/
+Node addHead(Node head, Item it);
