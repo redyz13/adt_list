@@ -9,22 +9,27 @@ List newList(void);
 int isEmpty(List list);
 
 /* Add a value into the first position of the list
-*  in case of error return the same list
+*  in case of error return 0
 */
-List addFirst(List list, Item it);
+int addFirst(List list, Item it);
 
 /* Add a value into the last position of the list
 *  if there are no values, add it as the first
-*  in case of error return the same list
+*  in case of error return 0
 */
-List addLast(List list, Item it);
+int addLast(List list, Item it);
 
 /* Add a value to the given position, if the position
-*  doesn't exist return the same list, if the position is the last,
+*  doesn't exist return 0, if the position is the last,
 *  add the value to the end, if the position is 0, add the
 *  value at the beginning
 */
-List add(List list, Item it, int pos);
+int add(List list, Item it, int pos);
+
+/*
+*
+*/
+int removeItem(List list, Item it);
 
 // Print the entire list to stdout
 void printList(List list);

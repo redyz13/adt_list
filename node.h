@@ -32,3 +32,8 @@ Node addTail(Node head, Item it);
 *  created one as head
 */
 Node addPos(Node head, Item it, int pos);
+
+/*
+*
+*/
+Node removeNode(Node head, Item it);

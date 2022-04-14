@@ -25,44 +25,57 @@ int isEmpty(List list) {
     return (list->size) == 0;
 }
 
-List addFirst(List list, Item it) {
+int addFirst(List list, Item it) {
     Node head = list->head;
 
     head = addHead(list->head, it);
     
-    if(head == NULL) return list;
+    if(head == NULL) return 0;
 
     list->head = head;
     (list->size)++;
 
-    return list;
+    return 1;
 }
 
-List addLast(List list, Item it) {
+int addLast(List list, Item it) {
     Node head = list->head;
 
     head = addTail(list->head, it);
     
-    if(head == NULL) return list;
+    if(head == NULL) return 0;
 
     list->head = head;
     (list->size)++;
 
-    return list;
+    return 1;
 }
 
-List add(List list, Item it, int pos) {
+int add(List list, Item it, int pos) {
     Node head = list->head;
 
     head = addPos(list->head, it, pos);
     
-    if(head == NULL) return list;
+    if(head == NULL) return 0;
 
     list->head = head;
     (list->size)++;
 
-    return list;
+    return 1;
 }
+
+// List removeItem(List list, Item it) {
+//     Node head = list->head;
+//
+//     head = removeNode(list->head, it);
+//     
+//     if(head == NULL) return list;
+//
+//     list->head = head;
+//     (list->size)--;
+//
+//     return list;
+// }
 
 void printList(List list) {
     Node head = list->head;
@@ -89,7 +102,7 @@ List reverseList(List list) {
 
     while(!isNull(head)){
         val = getItem(head);
-        reverse = addFirst(reverse, val);
+        addFirst(reverse, val);
         head = nextNode(head);
     }
     
