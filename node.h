@@ -33,7 +33,7 @@ Node addTail(Node head, Item it);
 */
 Node addPos(Node head, Item it, int pos);
 
-/*
-*
+/* Remove the first occurence of the node that has the
+*  given data, if there are no nodes return null
 */
 Node removeNode(Node head, Item it);

@@ -64,18 +64,18 @@ int add(List list, Item it, int pos) {
     return 1;
 }
 
-// List removeItem(List list, Item it) {
-//     Node head = list->head;
-//
-//     head = removeNode(list->head, it);
-//     
-//     if(head == NULL) return list;
-//
-//     list->head = head;
-//     (list->size)--;
-//
-//     return list;
-// }
+int removeItem(List list, Item it) {
+    Node head = list->head;
+
+    head = removeNode(list->head, it);
+   
+    if(head == NULL) return 0;
+
+    list->head = head;
+    (list->size)--;
+
+    return 1;
+}
 
 void printList(List list) {
     Node head = list->head;

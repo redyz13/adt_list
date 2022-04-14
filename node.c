@@ -127,6 +127,46 @@ Node addPos(Node head, Item it, int pos) {
     return new_head;
 }
 
+Node removeNode(Node head, Item it) {
+    Node tmp;
+
+    tmp = head;
+
+    // If there are no nodes, there is nothing to delete
+    if(head == NULL) return NULL;
+
+    /* If the data is at head set head to next node
+    *  and free the previous head
+    */
+    if(isEqual(it, getItem(head))) {
+        head = head->next;
+        free(tmp);
+        return head;
+    }
+
+    Node previous, new_head;
+
+    previous = head;
+    new_head = head;
+
+    // Traverse until the data is found or you reach the end of the list 
+    while(!isEqual(it, getItem(tmp)) && !isNull(tmp)) {
+        previous = tmp;
+        tmp = nextNode(tmp);
+    }
+
+    // Data not found
+    if(tmp == NULL) return NULL;
+
+    /* If the data is found set the next pointer of the previous node
+    *  to the next node of the node to delete
+    */
+    previous->next = tmp->next;
+    free(tmp);
+
+    return new_head;
+}
+
 Item getItem(Node node) {
     if(node != NULL) {
         return node->data;

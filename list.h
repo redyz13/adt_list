@@ -26,8 +26,9 @@ int addLast(List list, Item it);
 */
 int add(List list, Item it, int pos);
 
-/*
-*
+/* Remove the first occurence of the given data,
+*  if the list is empty or the data to delete
+*  isn't found return 0
 */
 int removeItem(List list, Item it);
 
