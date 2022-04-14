@@ -14,6 +14,7 @@ List newList(void) {
     l = malloc(sizeof(struct List));
     if(l == NULL) return NULL;
 
+    // Set the head pointer to NULL and the size to 0
     l->head = NULL;
     l->size = 0;
 
@@ -31,6 +32,7 @@ void printList(List list) {
     Node head = list->head;
     int i = 0;
 
+    // Traverse through nodes of the list and print data of each node
     while(head != NULL) {
         printf("Elemento %d = ", i);
         printItem(getItem(head));
@@ -45,6 +47,7 @@ void freeList(List list) {
 
     head = list->head;
 
+    // Travers through nodes and free each node
     while(head != NULL) {
         tmp = head;
         head = nextNode(head);

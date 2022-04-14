@@ -13,6 +13,7 @@ Node newNode(Item it) {
     new = malloc(sizeof(struct Node));
     if(new == NULL) return NULL;
 
+    // Set the next pointer to NULL and give the data to the node
     new->next = NULL;
     new->data = it;
     
@@ -31,12 +32,15 @@ Node addHead(Node head, Item it) {
     new = newNode(it);
     if(new == NULL) return NULL;
 
+    // If there are no nodes, set the created one as head 
     if(head == NULL) {
         head = new; 
         return head;
     }
 
+    // Make the next of the new node as head
     new->next = head; 
+    // Move the head to point to the new node
     head = new; 
 
     return head;
