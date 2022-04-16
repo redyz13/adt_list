@@ -30,7 +30,7 @@ int main(void) {
     removeItemPos(list, 0);
     removeItemPos(list, 0);
 
-    int x = get(list, 3);
+    int x = getFirst(list);
 
     printf("%d\n\n", x);
 

@@ -44,6 +44,16 @@ int removeItemPos(List list, int pos);
 */
 Item get(List list, int pos);
 
+/* Get the first value, if the list is empty, return
+*  NULLITEM
+*/
+Item getFirst(List list);
+
+/* Get the last value, if the list is empty, return
+*  NULLITEM
+*/
+Item getFirst(List list);
+
 // Print the entire list to stdout
 void printList(List list);
 

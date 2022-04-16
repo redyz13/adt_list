@@ -100,6 +100,21 @@ Item get(List list, int pos) {
     return getItemPos(list->head, pos);
 }
 
+Item getFirst(List list) {
+    Node head = list->head;
+
+    if(head == NULL) return NULLITEM;
+
+    return getItem(head);
+}
+
+Item getLast(List list) {
+    Node head = list->head;
+    int size = (list->size) - 1;
+
+    return getItemPos(head, size);
+}
+
 void printList(List list) {
     Node head = list->head;
     int i = 0;
