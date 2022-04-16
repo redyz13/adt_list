@@ -124,8 +124,9 @@ void freeList(List list) {
         tmp = head;
         /* If the items are allocated they will be deallocated 
         *  You can comment this line if you don't need it (XXX)
+        *  The freeItem will break the use of reverseList (XXX)
         */
-        freeItem(getItem(tmp));
+        // freeItem(getItem(tmp));
 
         head = nextNode(head);
         free(tmp);

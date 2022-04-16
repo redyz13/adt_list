@@ -13,7 +13,6 @@ void freeItem(Item it) {
     ;
 }
 
-
 // Change the function based on the item type (TODO in case)
 int isEqual(Item it1, Item it2) {
     return it1 == it2;
