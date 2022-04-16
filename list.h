@@ -32,6 +32,12 @@ int add(List list, Item it, int pos);
 */
 int removeItem(List list, Item it);
 
+/* Remove a value to the given position, if the position
+*  doesn't exist return 0, if the position is 0, remove the
+*  value at the beginning
+*/
+int removeItemPos(List list, int pos);
+
 // Print the entire list to stdout
 void printList(List list);
 

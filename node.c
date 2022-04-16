@@ -178,6 +178,49 @@ Node removeNode(Node head, Item it) {
     return new_head;
 }
 
+Node removePos(Node head, int pos) {
+    int i = 0;
+
+    // If there are no nodes, there is nothing to delete
+    if(head == NULL) return NULL;
+
+    Node tmp;
+
+    // If the position is 0, remove the head
+    if(pos == 0) {
+        tmp = head;
+        head = head->next;
+        free(tmp);
+        return head;
+    }
+
+    Node previous, new_head;
+
+    previous = head;
+    new_head = head;
+
+    // Traverse until the given pos - 1 is found or you reach the end of the list 
+    while(i < pos - 1 && !isNull(previous)) {
+        previous = nextNode(previous);
+        i++;
+    }
+
+    // If the position doesn't exist return null
+    if(previous == NULL) return NULL;
+    if(previous->next == NULL) return NULL;
+
+    // Give to tmp the next of the previous node (the node to delete)
+    tmp = previous->next;
+
+    /* If the pos is found set the next pointer of the previous node
+    *  to the next node of the node to delete
+    */
+    previous->next = tmp->next;
+    free(tmp);
+
+    return new_head;
+}
+
 Item getItem(Node node) {
     if(node != NULL) {
         return node->data;

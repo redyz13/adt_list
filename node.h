@@ -37,3 +37,9 @@ Node addPos(Node head, Item it, int pos);
 *  given data, if there are no nodes return null
 */
 Node removeNode(Node head, Item it);
+
+/* Remove a node to the given position, if the position
+*  doesn't exist return null, if the position is 0, remove the
+*  head
+*/
+Node removePos(Node head, int pos);

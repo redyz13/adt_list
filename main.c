@@ -8,7 +8,7 @@ int main(void) {
     list = newList();
     removeItem(list, 11);
 
-    for(int i = 0; i < 5; i++) {
+    for(int i = 0; i < 7; i++) {
         addFirst(list, i);
     }
 
@@ -29,6 +29,9 @@ int main(void) {
     removeItem(list, 4);
     addFirst(list, 1);
     addLast(list, 2);
+
+    removeItemPos(list, 0);
+    removeItemPos(list, 0);
 
     printList(list);
 

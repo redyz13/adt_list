@@ -80,6 +80,22 @@ int removeItem(List list, Item it) {
     return 1;
 }
 
+int removeItemPos(List list, int pos) {
+    Node head = list->head;
+
+    head = removePos(list->head, pos);
+
+    // Check if this is the last value to remove
+    if(list->size > 1) {
+        if(head == NULL) return 0;
+    }
+   
+    list->head = head;
+    (list->size)--;
+
+    return 1;
+}
+
 void printList(List list) {
     Node head = list->head;
     int i = 0;
