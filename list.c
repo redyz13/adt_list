@@ -96,6 +96,10 @@ int removeItemPos(List list, int pos) {
     return 1;
 }
 
+Item get(List list, int pos) {
+    return getItemPos(list->head, pos);
+}
+
 void printList(List list) {
     Node head = list->head;
     int i = 0;

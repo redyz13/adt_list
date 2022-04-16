@@ -221,6 +221,27 @@ Node removePos(Node head, int pos) {
     return new_head;
 }
 
+Item getItemPos(Node head, int pos) {
+    int i = 0;
+
+    // If there are no nodes, there is nothing to return
+    if(head == NULL) return NULLITEM;
+
+    // If the position is 0, return the value of the head
+    if(pos == 0) {
+        return getItem(head);
+    }
+
+    // Traverse until the given pos is found or you reach the end of the list 
+    while(i < pos && !isNull(head)) {
+        head = nextNode(head);
+        i++;
+    }
+
+    // If the pos isn't found getItem will return NULLITEM
+    return getItem(head);
+}
+
 Item getItem(Node node) {
     if(node != NULL) {
         return node->data;

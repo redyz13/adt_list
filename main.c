@@ -22,16 +22,17 @@ int main(void) {
 
     putchar('\n');
 
-    removeItem(list, 0);
-    removeItem(list, 1);
     removeItem(list, 2);
     removeItem(list, 3);
     removeItem(list, 4);
     addFirst(list, 1);
-    addLast(list, 2);
 
     removeItemPos(list, 0);
     removeItemPos(list, 0);
+
+    int x = get(list, 3);
+
+    printf("%d\n\n", x);
 
     printList(list);
 

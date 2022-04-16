@@ -43,3 +43,9 @@ Node removeNode(Node head, Item it);
 *  head
 */
 Node removePos(Node head, int pos);
+
+/* Get the value at the given position, if the position
+*  doesn't exist return NULLITEM, if the position is 0, get the 
+*  value of the head
+*/
+Item getItemPos(Node head, int pos);
