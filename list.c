@@ -115,6 +115,24 @@ Item getLast(List list) {
     return getItemPos(head, size);
 }
 
+int contains(List list, Item it) {
+    Node head = list->head; 
+    
+    if(isEqual(it, getItem(head))) {
+        return 1;
+    }
+    
+    while(!isNull(head)){
+        if(isEqual(it, getItem(head))){
+            return 1;
+        }
+        
+        head = nextNode(head);
+    }
+
+    return 0;
+}
+
 void printList(List list) {
     Node head = list->head;
     int i = 0;

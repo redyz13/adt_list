@@ -25,16 +25,19 @@ int main(void) {
     removeItem(list, 2);
     removeItem(list, 3);
     removeItem(list, 4);
-    addFirst(list, 1);
+    addFirst(list, 3);
+    
 
-    removeItemPos(list, 0);
-    removeItemPos(list, 0);
+    //removeItemPos(list, 0);
+    //removeItemPos(list, 0);
 
     int x = getFirst(list);
 
     printf("%d\n\n", x);
 
     printList(list);
+    
+    printf("\nehi %d\n", contains(list, 5));
 
     freeList(list);
 

@@ -52,7 +52,10 @@ Item getFirst(List list);
 /* Get the last value, if the list is empty, return
 *  NULLITEM
 */
-Item getFirst(List list);
+Item getLast(List list);
+
+// Check if the value is in the list
+int contains(List list, Item it);
 
 // Print the entire list to stdout
 void printList(List list);
