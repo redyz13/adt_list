@@ -69,7 +69,10 @@ int removeItem(List list, Item it) {
 
     head = removeNode(list->head, it);
    
-    if(head == NULL) return 0;
+    // Check if this is the last value to remove
+    if(list->size > 1) {
+        if(head == NULL) return 0;
+    }
 
     list->head = head;
     (list->size)--;

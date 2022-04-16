@@ -8,8 +8,6 @@ int main(void) {
     list = newList();
     removeItem(list, 11);
 
-    addLast(list, 31);
-
     for(int i = 0; i < 5; i++) {
         addFirst(list, i);
     }
@@ -19,20 +17,18 @@ int main(void) {
     list = reverseList(list);
 
     //putchar('\n');
-    
-    addLast(list, 25);
-    add(list, 33, 2);
-    add(list, 533, 22);
-    add(list, 533, 8);
-    add(list, 11, 9);
 
     printList(list);
 
     putchar('\n');
 
-    removeItem(list, 533);
+    removeItem(list, 0);
     removeItem(list, 1);
-    removeItem(list, 31);
+    removeItem(list, 2);
+    removeItem(list, 3);
+    removeItem(list, 4);
+    addFirst(list, 1);
+    addLast(list, 2);
 
     printList(list);
 
