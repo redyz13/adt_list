@@ -140,6 +140,10 @@ Node removeNode(Node head, Item it) {
     */
     if(isEqual(it, getItem(head))) {
         head = head->next;
+        /* If the items are allocated they will be deallocated 
+        *  You can comment this line if you don't need it (XXX)
+        */
+        freeItem(tmp->data);
         free(tmp);
         return head;
     }
