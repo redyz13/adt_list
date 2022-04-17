@@ -190,6 +190,12 @@ Node removePos(Node head, int pos) {
     if(pos == 0) {
         tmp = head;
         head = head->next;
+        /* If the items are allocated they will be deallocated 
+        *  You can comment this line if you don't need it (XXX)
+        */
+        // freeItem(tmp->data);
+
+        // Deallocate the node
         free(tmp);
         return head;
     }
@@ -216,6 +222,10 @@ Node removePos(Node head, int pos) {
     *  to the next node of the node to delete
     */
     previous->next = tmp->next;
+    /* If the items are allocated they will be deallocated 
+    *  You can comment this line if you don't need it (XXX)
+    */
+    // freeItem(tmp->data);
     free(tmp);
 
     return new_head;
