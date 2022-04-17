@@ -75,5 +75,3 @@ void freeItem(Item it) {
     free(it);
 }
 ```
-
-Note that currently the *freeItem* in the *freeList* of **list.c** will break the *reverseList* function unless you manually change the function by refactoring it

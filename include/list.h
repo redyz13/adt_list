@@ -87,10 +87,13 @@ List clone(List list);
 // Print the entire list to stdout
 void printList(List list);
 
-// Free the entire list
-void freeList(List list);
-
 /* Return a reversed list of the given list
 *  and free the old list
 */
 List reverseList(List list);
+
+// Free the entire list
+void freeList(List list);
+
+// Free the entire list and its data (dangerous XXX)
+void destroyList(List list);
