@@ -34,6 +34,7 @@ The first thing that you wanna do is give the definition of item in **item.h** a
 
 ```c
 // item.h
+
 typedef int Item;
 #define NULLITEM 0
 ```
@@ -58,6 +59,8 @@ Then you'll need to change the body of the default function *freeItem* in **item
 Example of a *freeItem* to deallocate a struct Person in the heap:
 
 ```c
+// item.c
+
 struct Person {
     char *name;
     char *surname;
