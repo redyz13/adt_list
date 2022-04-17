@@ -33,9 +33,14 @@ int add(List list, Item it, int pos);
 int removeItem(List list, Item it);
 
 /* Remove the first value in the list
- * if the list is empty return 0
+*  if the list is empty return 0
 */
 int removeFirst(List list);
+
+/* Remove the last value in the list
+*  if the list is empty return 0
+*/
+int removeLast(List list);
 
 /* Remove a value to the given position, if the position
 *  doesn't exist return 0, if the position is 0, remove the

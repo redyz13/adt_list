@@ -84,6 +84,12 @@ int removeFirst(List list) {
     return removeItemPos(list, 0);
 }
 
+int removeLast(List list) {
+    int size = (list->size) - 1;
+
+    return removeItemPos(list, size);
+}
+
 int removeItemPos(List list, int pos) {
     Node head = list->head;
 
