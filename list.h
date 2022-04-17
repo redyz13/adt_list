@@ -57,6 +57,11 @@ Item getLast(List list);
 // Check if the value is in the list
 int contains(List list, Item it);
 
+/* Return the position of the value in the list
+*  if the value isn't found return -1
+*/
+int indexOf(List list, Item it);
+
 // Print the entire list to stdout
 void printList(List list);
 

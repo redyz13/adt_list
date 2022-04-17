@@ -129,6 +129,22 @@ int contains(List list, Item it) {
     return 0;
 }
 
+int indexOf(List list, Item it) {
+    Node head = list->head;
+    int i = 0;
+
+    while(!isNull(head)){
+        if(isEqual(it, getItem(head))){
+            return i;
+        }
+        
+        i++;
+        head = nextNode(head);
+    }
+
+    return -1;
+}
+
 void printList(List list) {
     Node head = list->head;
     int i = 0;
