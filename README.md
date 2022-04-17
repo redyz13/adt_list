@@ -50,11 +50,15 @@ All basic changes are indicated by a **"// TODO"** comment
 
 The list has some function that can deallocate your data in the heap when you remove a node or destroy the list
 
-Those function are optional and commented by default because we're assuming that even by removing a node or destroying the list you want to keep your data in memory
+Those function are optional and commented by default because we're assuming that even by removing a node or deallocating the list you want to keep your data in memory
 
-If you want to use those function you'll need to uncomment the lines indicated by a **"// XXX"** comment (they are present in the *freeList* of **list.c** and the remove functions for the nodes in **node.c**)
+If you want to use those function you'll need to uncomment the lines indicated by a **"// XXX"** comment (they are present in the remove functions for the nodes in **node.c**)
 
-Then you'll need to change the body of the default function *freeItem* in **item.c**
+Note that the **"// XXX"** comments for the *destroyList* in **list.c** and **list.h** are already uncommented as you can choose whether or not to use the function
+
+After you have uncommented the lines, you'll need to change the body of the default function *freeItem* in **item.c**
+
+The *freeItem* will also be used in the *destroyList* of **list.c**, so you can deallocate all your data
 
 Example of a *freeItem* to deallocate a struct Person in the heap:
 

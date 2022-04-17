@@ -95,5 +95,5 @@ List reverseList(List list);
 // Free the entire list
 void freeList(List list);
 
-// Free the entire list and its data (dangerous XXX)
+// Free the entire list and its data (XXX)
 void destroyList(List list);

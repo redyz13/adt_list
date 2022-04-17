@@ -237,6 +237,7 @@ void freeList(List list) {
     free(list);
 }
 
+// This function will also deallocate data (XXX)
 void destroyList(List list) {
     Node head, tmp;
 
