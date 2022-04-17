@@ -135,7 +135,7 @@ void printList(List list) {
 
     // Traverse through nodes of the list and print data of each node
     while(!isNull(head)) {
-        printf("Elemento %d = ", i);
+        printf("Element %d = ", i);
         printItem(getItem(head));
         putchar('\n');
         head = nextNode(head);
