@@ -4,7 +4,7 @@
 
 > Source code can be found in the src directory
 
-> Header files can be found in the header directory
+> Header files can be found in the include directory
 
 **Installation**
 ------------
@@ -18,7 +18,7 @@
 
 Each source file has a relative path of its header in the same directory.
 
-If you want to compile the project withouth the make file remember to use the **gcc** flag:
+If you want to compile the project without the make file remember to use the **gcc** flag:
 
     -Ipath_of_the_headers
 
@@ -28,7 +28,7 @@ Run *make clean* to clear object files and the output file
 **Use your data**
 ------------
 
-You can use whatever type of data you want by modifyng the standard **item.c** and **item.h** files
+You can use whatever type of data you want by modifying the standard **item.c** and **item.h** files
 
 The first thing that you wanna do is give the definition of item in **item.h** and modify the constant NULLITEM as an error value associated with your data
 
