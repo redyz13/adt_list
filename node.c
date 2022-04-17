@@ -231,6 +231,48 @@ Node removePos(Node head, int pos) {
     return new_head;
 }
 
+Node setNode(Node head, Item it, int pos) {
+    // Item tmp;
+    int i = 0;
+
+    // If there are no nodes, there is nothing to set
+    if(head == NULL) return NULL;
+    
+    if(pos == 0) {
+        // tmp = head->data;
+        head->data = it;
+        /* If the items are allocated they will be deallocated 
+        *  You can comment this line if you don't need it (XXX)
+        */  
+        //freeItem(tmp);
+        return head;
+    }
+    
+    Node new_head;
+    
+    new_head = head;
+
+    while(i < pos && !isNull(head)) {
+        head = nextNode(head);
+        i++;
+    }
+    
+    // Data not found
+    if(head == NULL) return NULL;
+    
+    // tmp = head->data;
+    
+    // If the position is found set the new value
+    head->data = it;
+
+    /* If the items are allocated they will be deallocated 
+    *  You can comment this line if you don't need it (XXX)
+    */  
+    // freeItem(tmp);
+    
+    return new_head;
+}
+
 Item getItemPos(Node head, int pos) {
     int i = 0;
 

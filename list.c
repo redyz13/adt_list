@@ -106,6 +106,18 @@ int removeItemPos(List list, int pos) {
     return 1;
 }
 
+int set(List list, Item it, int pos) {
+    Node head = list->head;
+
+    head = setNode(head, it, pos);
+    
+    if(head == NULL) return 0;
+
+    list->head = head;
+
+    return 1;
+}
+
 Item get(List list, int pos) {
     return getItemPos(list->head, pos);
 }

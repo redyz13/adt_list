@@ -48,6 +48,13 @@ int removeLast(List list);
 */
 int removeItemPos(List list, int pos);
 
+/* Set the given value to the given position
+*  if the position is 0, set the value at the beginning
+*  if the list is empty or the position isn't found 
+*  return 0
+*/
+int set(List list, Item it, int pos);
+
 /* Get the value at the given position, if the position
 *  doesn't exist return NULLITEM, if the position is 0, get the 
 *  value at the beginning

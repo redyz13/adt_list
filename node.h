@@ -44,6 +44,12 @@ Node removeNode(Node head, Item it);
 */
 Node removePos(Node head, int pos);
 
+/* Set the given value in the node to the given position
+*  if the position is 0, set the value of the head
+*  if there are no nodes return null
+*/
+Node setNode(Node head, Item it, int pos);
+
 /* Get the value at the given position, if the position
 *  doesn't exist return NULLITEM, if the position is 0, get the 
 *  value of the head
