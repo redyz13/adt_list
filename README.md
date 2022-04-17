@@ -33,9 +33,9 @@ You can use whatever type of data you want by modifying the standard **item.c** 
 The first thing that you wanna do is give the definition of item in **item.h** and modify the constant NULLITEM as an error value associated with your data
 
 ```c
-    // item.h
-    typedef int Item;
-    #define NULLITEM 0
+// item.h
+typedef int Item;
+#define NULLITEM 0
 ```
 
 In our example we're using a linked list of integers (look at the **main.c**)
@@ -58,19 +58,19 @@ Then you'll need to change the body of the default function *freeItem* in **item
 Example of a *freeItem* to deallocate a struct Person in the heap:
 
 ```c
-    struct Person {
-        char *name;
-        char *surname;
-        int age;
-    };
+struct Person {
+    char *name;
+    char *surname;
+    int age;
+};
 
-    // Name and surname are also allocated in the heap
+// Name and surname are also allocated in the heap
 
-    void freeItem(Item it) {
-        free(it->name);
-        free(it->surname);
-        free(it);
-    }
+void freeItem(Item it) {
+    free(it->name);
+    free(it->surname);
+    free(it);
+}
 ```
 
 Note that currently the *freeItem* in the *freeList* of **list.c** will break the *reverseList* function unless you manually change the function by refactoring it
