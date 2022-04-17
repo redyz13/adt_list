@@ -4,6 +4,7 @@
 
 int main(void) {
     List list;
+    List list2;
 
     list = newList();
     removeItem(list, 11);
@@ -24,23 +25,26 @@ int main(void) {
 
     printf("\nContained: %d\n\n", contains(list, 5));
 
-    removeItem(list, 2);
-    removeItem(list, 3);
-    removeItem(list, 4);
-    addFirst(list, 3);
+    //removeItem(list, 2);
+    //removeItem(list, 3);
+    //removeItem(list, 4);
+    //addFirst(list, 3);
     
 
     //removeItemPos(list, 0);
     //removeItemPos(list, 0);
 
-    removeItemPos(list, 0);
-    removeItemPos(list, 0);
-
-    printList(list);
+    //removeItemPos(list, 0);
+    //removeItemPos(list, 0);
     
-    printf("\nContained: %d\n", contains(list, 1));
+    list2 = clone(list);
+
+    printList(list2);
+    
+    printf("\nContained: %d\n", contains(list2, 1));
 
     freeList(list);
+    freeList(list2);
 
     return 0;
 }

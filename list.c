@@ -145,6 +145,27 @@ int indexOf(List list, Item it) {
     return -1;
 }
 
+List clone(List list) {
+    Node head;
+    Item val;
+
+    head = list->head;
+    
+    if(head == NULL) return NULL;
+
+    List clone;
+
+    clone = newList();
+
+    while(!isNull(head)){
+        val = getItem(head);
+        addLast(clone, val);
+        head = nextNode(head);
+    }
+
+    return clone;
+}
+
 void printList(List list) {
     Node head = list->head;
     int i = 0;

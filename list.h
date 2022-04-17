@@ -62,6 +62,11 @@ int contains(List list, Item it);
 */
 int indexOf(List list, Item it);
 
+/* Return a cloned list of the given one
+*  if the given list is empty return null
+*/ 
+List clone(List list);
+
 // Print the entire list to stdout
 void printList(List list);
 
