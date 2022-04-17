@@ -80,6 +80,10 @@ int removeItem(List list, Item it) {
     return 1;
 }
 
+int removeFirst(List list) {
+    return removeItemPos(list, 0);
+}
+
 int removeItemPos(List list, int pos) {
     Node head = list->head;
 
