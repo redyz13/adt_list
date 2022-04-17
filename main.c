@@ -22,6 +22,8 @@ int main(void) {
 
     putchar('\n');
 
+    printf("\nContained: %d\n\n", contains(list, 5));
+
     removeItem(list, 2);
     removeItem(list, 3);
     removeItem(list, 4);
@@ -31,13 +33,12 @@ int main(void) {
     //removeItemPos(list, 0);
     //removeItemPos(list, 0);
 
-    int x = getFirst(list);
-
-    printf("%d\n\n", x);
+    removeItemPos(list, 0);
+    removeItemPos(list, 0);
 
     printList(list);
     
-    printf("\nehi %d\n", contains(list, 5));
+    printf("\nContained: %d\n", contains(list, 1));
 
     freeList(list);
 

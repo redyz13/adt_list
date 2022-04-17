@@ -118,10 +118,6 @@ Item getLast(List list) {
 int contains(List list, Item it) {
     Node head = list->head; 
     
-    if(isEqual(it, getItem(head))) {
-        return 1;
-    }
-    
     while(!isNull(head)){
         if(isEqual(it, getItem(head))){
             return 1;
