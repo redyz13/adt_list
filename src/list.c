@@ -185,7 +185,7 @@ List clone(List list) {
         head = nextNode(head);
     }
     
-    clone = reverse(clone);
+    clone = reverseList(clone);
 
     return clone;
 }
