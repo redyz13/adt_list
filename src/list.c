@@ -181,9 +181,11 @@ List clone(List list) {
 
     while(!isNull(head)){
         val = getItem(head);
-        addLast(clone, val);
+        addFirst(clone, val);
         head = nextNode(head);
     }
+    
+    clone = reverse(clone);
 
     return clone;
 }
