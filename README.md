@@ -36,6 +36,7 @@ The first thing that you wanna do is give the definition of item in **item.h** a
 // item.h
 
 typedef int Item;
+
 #define NULLITEM 0
 ```
 
