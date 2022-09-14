@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "list.h"
 
 int main(void) {
@@ -8,7 +7,7 @@ int main(void) {
 
     list = newList();
 
-    for(int i = 0; i <= 1000; i++) {
+    for (int i = 0; i <= 1000; i++) {
         addFirst(list, i);
     }
 
@@ -19,6 +18,7 @@ int main(void) {
     printList(list2);
 
     freeList(list);
+    freeList(list2);
 
     return 0;
 }
